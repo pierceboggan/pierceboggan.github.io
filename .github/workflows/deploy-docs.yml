@@ -30,7 +30,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: github-pages
-        path: pierce/github-pages.zip
+        path: github-pages.zip
     - name: Deploy to GitHub Pages
       uses: actions/upload-pages-artifact@v2
       with:
