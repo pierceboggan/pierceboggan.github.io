@@ -24,7 +24,7 @@ jobs:
         echo "Building the book"
         mdbook build
         echo "Zipping the book"
-        zip -r github-actions.zip book
+        zip -r github-pages.zip book
         ls
     - name: Upload artifact
       uses: actions/upload-artifact@v2
