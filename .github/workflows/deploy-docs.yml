@@ -25,7 +25,7 @@ jobs:
         mdbook build
         cd ..
         echo "Zipping the book"
-        zip -r github-actions.zip pierce
+        zip -r github-actions.zip book
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
