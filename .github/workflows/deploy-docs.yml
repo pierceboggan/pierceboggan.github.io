@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-            actions/upload-pages-artifact@v2
       with:
         fetch-depth: 0
     - name: Install latest mdbook
@@ -19,6 +18,10 @@ jobs:
         mkdir mdbook
         curl -sSL $url | tar -xz --directory=./mdbook
         echo `pwd`/mdbook >> $GITHUB_PATH
+    - uses: actions/upload-pages-artifact@v2
+      with:
+        artifact-name: github-actions
+        path: pierce
     - name: Build mdBook
       run: |
         cd pierce
