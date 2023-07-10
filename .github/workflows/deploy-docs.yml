@@ -20,8 +20,10 @@ jobs:
         echo `pwd`/mdbook >> $GITHUB_PATH
     - name: Build mdBook
       run: |
+        cd pierce
         echo "Building the book"
         mdbook build
+        cd ..
         echo "Zipping the book"
         zip -r github-actions.zip pierce
     - name: Upload artifact
