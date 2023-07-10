@@ -23,7 +23,6 @@ jobs:
         cd pierce
         echo "Building the book"
         mdbook build
-        cd ..
         echo "Zipping the book"
         zip -r github-actions.zip book
     - name: Upload artifact
