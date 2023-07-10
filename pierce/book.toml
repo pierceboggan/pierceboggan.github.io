@@ -1,0 +1,6 @@
+[book]
+authors = ["Pierce Boggan"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Pierce Boggan"
