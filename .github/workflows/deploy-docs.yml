@@ -1,4 +1,4 @@
-name: Deploy
+name: Deploy to GitHub Pages
 on:
   push:
     branches:
@@ -18,20 +18,17 @@ jobs:
         mkdir mdbook
         curl -sSL $url | tar -xz --directory=./mdbook
         echo `pwd`/mdbook >> $GITHUB_PATH
-    - name: Build mdBook
+    - name: Build book
       run: |
         cd pierce
         echo "Building the book"
         mdbook build
-        ls
-        cd ..
-        ls
-    - name: Upload artifact
+    - name: Upload book to artifacts
       uses: actions/upload-artifact@v2
       with:
         name: github-pages
         path: pierce/book
-    - name: Deploy to GitHub Pages
+    - name: Deploy to GitHub Pages from artifacts
       uses: actions/upload-pages-artifact@v2
       with:
         path: /
