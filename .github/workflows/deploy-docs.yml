@@ -24,13 +24,13 @@ jobs:
         echo "Building the book"
         mdbook build
         ls
-        tar -czvf github-pages.tar.gz book/
+        tar -czvf github-pages.tar book/
         ls
     - name: Upload book to artifacts
       uses: actions/upload-artifact@v2
       with:
         name: github-pages
-        path: pierce/github-pages.tar.gz
+        path: pierce/github-pages.tar
     - name: Deploy to GitHub Pages from artifacts
       uses: actions/upload-pages-artifact@v2
       with:
