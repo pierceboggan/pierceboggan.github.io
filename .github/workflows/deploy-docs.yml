@@ -24,8 +24,10 @@ jobs:
         echo "Building the book"
         mdbook build
         tar -czvf github-pages.tar -C book .
-    - name: Deploy to GitHub Pages from artifacts
+    - name : Upload artifact
       uses: actions/upload-pages-artifact@v2
       with:
         name: github-pages.tar
         path: pierce/
+    - name: Deploy to GitHub Pages from artifacts
+      uses: actions/deploy-pages@v2 
