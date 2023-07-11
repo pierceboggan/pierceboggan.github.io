@@ -23,6 +23,9 @@ jobs:
         cd pierce
         echo "Building the book"
         mdbook build
+        ls
+        cd ..
+        ls
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
