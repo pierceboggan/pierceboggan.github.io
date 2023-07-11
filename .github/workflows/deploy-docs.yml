@@ -23,9 +23,7 @@ jobs:
         cd pierce
         echo "Building the book"
         mdbook build
-        ls
-        tar -czvf github-pages.tar book/
-        ls
+        tar -czvf github-pages.tar -C book .
     - name: Upload book to artifacts
       uses: actions/upload-artifact@v2
       with:
